@@ -29,12 +29,18 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #6B7280; /* Lighter thumb on hover */
         }
+        .background-image-container {
+            background-image:Profile Photo 2.jpeg;
+            background-size:cover;
+            backgrund-position:center;
+        }
     </style>
 </head>
 <body class="antialiased">
     <!-- Header/Hero Section -->
     <header class="bg-gradient-to-r from-blue-950 to-black text-white py-16 px-4 sm:px-6 lg:px-8 shadow-lg"> 
-        <div background-image="/images/Header background.png" class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+           <div class = "background-image-container"> 
             <div class="mb-8 md:mb-0">
                 <!-- Profile Image Placeholder -->
                 <img src="images/Profile Photo 2.jpeg" alt="Babatope Owoeye Profile Photo" class="w-36 h-36 rounded-full mx-auto md:mx-0 border-4 border-blue-300 shadow-md">
@@ -67,6 +73,7 @@
                     </a>
                 </div>
             </div>
+        </div>
         </div>
     </header>
 
@@ -245,6 +252,7 @@
 
 </body>
 </html>
+
 
 
 
