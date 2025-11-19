@@ -18,7 +18,7 @@
       </svg>"
     />
 
-    <!-- Google Fonts (optional, but nice) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -262,41 +262,58 @@
             </dl>
           </div>
 
-          <!-- Right-side panel / “card” -->
+          <!-- Right-side panel / “card” with image -->
           <aside
-            class="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.9)]"
+            class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.9)] space-y-4"
           >
-            <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
-              What I do
-            </h2>
-            <ul class="mt-4 space-y-4 text-sm text-slate-200">
-              <li class="flex gap-3">
-                <span class="mt-0.5 text-emerald-400">●</span>
-                <p>
-                  <span class="font-semibold text-slate-50">Data Analysis &amp; BI:</span>
-                  translate raw data into dashboards and reports that business and
-                  technical stakeholders can act on.
+            <!-- HERO IMAGE -->
+            <div class="relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80"
+                alt="Data professional working with analytics on multiple screens"
+                class="h-52 w-full object-cover"
+              />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10"></div>
+              <div class="pointer-events-none absolute bottom-3 left-3">
+                <p class="text-xs font-medium uppercase tracking-[0.18em] text-emerald-300">
+                  Analytics in action
                 </p>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-0.5 text-emerald-400">●</span>
-                <p>
-                  <span class="font-semibold text-slate-50">Machine Learning:</span>
-                  build and evaluate models for prediction and classification, with a
-                  focus on explainability and real-world performance.
-                </p>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-0.5 text-emerald-400">●</span>
-                <p>
-                  <span class="font-semibold text-slate-50">Data Engineering Basics:</span>
-                  design efficient data pipelines for collection, cleaning, and
-                  transformation using Python, SQL, and automation tools.
-                </p>
-              </li>
-            </ul>
+              </div>
+            </div>
 
-            <div class="mt-6 flex items-center justify-between border-t border-slate-800 pt-4">
+            <div>
+              <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+                What I do
+              </h2>
+              <ul class="mt-4 space-y-4 text-sm text-slate-200">
+                <li class="flex gap-3">
+                  <span class="mt-0.5 text-emerald-400">●</span>
+                  <p>
+                    <span class="font-semibold text-slate-50">Data Analysis &amp; BI:</span>
+                    translate raw data into dashboards and reports that business and
+                    technical stakeholders can act on.
+                  </p>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-0.5 text-emerald-400">●</span>
+                  <p>
+                    <span class="font-semibold text-slate-50">Machine Learning:</span>
+                    build and evaluate models for prediction and classification, with a
+                    focus on explainability and real-world performance.
+                  </p>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-0.5 text-emerald-400">●</span>
+                  <p>
+                    <span class="font-semibold text-slate-50">Data Engineering Basics:</span>
+                    design efficient data pipelines for collection, cleaning, and
+                    transformation using Python, SQL, and automation tools.
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex items-center justify-between border-t border-slate-800 pt-4">
               <div>
                 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">
                   Based in
@@ -308,7 +325,6 @@
                 target="_blank"
                 rel="noreferrer"
                 class="text-xs font-medium text-emerald-300 hover:text-emerald-200 link-underline"
-                style="--tw-shadow-color: rgba(52, 211, 153, 0.5)"
               >
                 View certifications ↗
               </a>
@@ -366,17 +382,31 @@
             <article
               class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
             >
+              <!-- PROJECT IMAGE -->
+              <div class="relative mb-4 overflow-hidden rounded-2xl border border-slate-800/80">
+                <img
+                  src="https://images.unsplash.com/photo-1581092580565-052e97b46688?auto=format&fit=crop&w=900&q=80"
+                  alt="Brain scan visuals and medical data used for dementia detection"
+                  class="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20"></div>
+                <div class="pointer-events-none absolute bottom-3 left-3 text-xs font-medium text-emerald-200">
+                  Healthcare AI · Imaging
+                </div>
+              </div>
+
               <div>
                 <h3 class="text-lg font-semibold text-slate-50">
                   Early Detection of Dementia from Brain Imagery
                 </h3>
                 <p class="mt-2 text-sm leading-relaxed text-slate-300">
-                  Designed and executed robust data pipelines to analyze large, complex
-                  brain imagery datasets. Developed advanced neural network models for
-                  early detection, achieving an AUC of
-                  <span class="font-semibold text-emerald-300">0.97</span>, and
-                  collaborated with stakeholders to translate findings into meaningful
-                  clinical insights.
+                  Built an end-to-end deep learning pipeline to classify brain MRI imagery
+                  for early dementia detection, achieving an AUC of
+                  <span class="font-semibold text-emerald-300">0.97</span>. The project
+                  covers data preprocessing, model architecture selection, training, and
+                  evaluation, with a focus on interpretability and clinical relevance.
+                  Full experiments, code, and documentation are available in the
+                  Dementia-Classification repository on GitHub.
                 </p>
 
                 <dl
@@ -413,7 +443,7 @@
                 </ul>
               </div>
 
-              <div class="mt-5 flex items-center justify-between gap-3">
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                 <a
                   href="https://github.com/Owoeye-Babatope/Dementia-Classification"
                   target="_blank"
@@ -429,17 +459,31 @@
             <article
               class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
             >
+              <!-- PROJECT IMAGE -->
+              <div class="relative mb-4 overflow-hidden rounded-2xl border border-slate-800/80">
+                <img
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80"
+                  alt="Team collaborating in front of analytics dashboards"
+                  class="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20"></div>
+                <div class="pointer-events-none absolute bottom-3 left-3 text-xs font-medium text-emerald-200">
+                  Freelance Analytics · AUC 0.97
+                </div>
+              </div>
+
               <div>
                 <h3 class="text-lg font-semibold text-slate-50">
                   High-Impact Data-Driven Project (Freelance)
                 </h3>
                 <p class="mt-2 text-sm leading-relaxed text-slate-300">
-                  Delivered a high-impact freelance analytics engagement that showcased
-                  strong end-to-end skills in data preparation, feature engineering, and
-                  predictive modeling. Achieved an AUC of
-                  <span class="font-semibold text-emerald-300">0.97</span>, and presented
-                  insights in a way that aligned technical performance with business
-                  outcomes.
+                  Delivered a client-facing analytics project that combined data cleaning,
+                  feature engineering, and predictive modeling to solve a real business
+                  problem and achieve an AUC of
+                  <span class="font-semibold text-emerald-300">0.97</span>. I translated
+                  complex model outputs into actionable recommendations aligned with
+                  business goals. Supporting notebooks and analysis are documented across
+                  my GitHub repositories and shared reports.
                 </p>
 
                 <dl
@@ -476,14 +520,22 @@
                 </ul>
               </div>
 
-              <div class="mt-5 flex items-center justify-between gap-3">
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                 <a
-                  href="https://app.powerbi.com/links/q2WLVLIRED?bookmarkGuid=cc8975ca-4119-4ddc-b73f-7479e3b282ce&ctid=6611707a-4770-4fc4-9a62-f323d7061108&pbi_source=linkShare"
+                  href="https://app.powerbi.com/links/q2WLVLIRED?ctid=6611707a-4770-4fc4-9a62-f323d7061108&pbi_source=linkShare&bookmarkGuid=cc8975ca-4119-4ddc-b73f-7479e3b282ce"
                   target="_blank"
                   rel="noreferrer"
                   class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 link-underline"
                 >
                   Explore live report ↗
+                </a>
+                <a
+                  href="https://github.com/Owoeye-Babatope?tab=repositories"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-xs font-semibold text-slate-300 hover:text-emerald-200"
+                >
+                  View related code on GitHub ↗
                 </a>
               </div>
             </article>
@@ -492,16 +544,30 @@
             <article
               class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
             >
+              <!-- PROJECT IMAGE -->
+              <div class="relative mb-4 overflow-hidden rounded-2xl border border-slate-800/80">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80"
+                  alt="Colorful analytics dashboard on a laptop screen"
+                  class="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20"></div>
+                <div class="pointer-events-none absolute bottom-3 left-3 text-xs font-medium text-emerald-200">
+                  Power BI · Sales Analytics
+                </div>
+              </div>
+
               <div>
                 <h3 class="text-lg font-semibold text-slate-50">
                   Interactive Sales Dashboard with Power BI
                 </h3>
                 <p class="mt-2 text-sm leading-relaxed text-slate-300">
-                  Built an interactive Power BI dashboard to analyze sales performance,
-                  surfacing key KPIs, trends, and segmentation views. Inspired by the
-                  Coursera Power BI Specialization, this project demonstrates best
-                  practices in data modeling, DAX measures, and dashboard design for
-                  business stakeholders.
+                  Designed and built an interactive Power BI dashboard to track revenue,
+                  profitability, and customer trends across segments. The report highlights
+                  KPIs, time-series trends, and drill-down views that help business users
+                  quickly identify growth opportunities and underperforming areas. The
+                  underlying data model and measures are documented alongside related
+                  assets in my GitHub projects.
                 </p>
 
                 <dl
@@ -536,14 +602,256 @@
                 </ul>
               </div>
 
-              <div class="mt-5 flex items-center justify-between gap-3">
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
                 <a
-                  href="https://app.powerbi.com/links/q2WLVLIRED?bookmarkGuid=cc8975ca-4119-4ddc-b73f-7479e3b282ce&ctid=6611707a-4770-4fc4-9a62-f323d7061108&pbi_source=linkShare"
+                  href="https://app.powerbi.com/links/q2WLVLIRED?ctid=6611707a-4770-4fc4-9a62-f323d7061108&pbi_source=linkShare&bookmarkGuid=cc8975ca-4119-4ddc-b73f-7479e3b282ce"
                   target="_blank"
                   rel="noreferrer"
                   class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 link-underline"
                 >
                   View dashboard ↗
+                </a>
+                <a
+                  href="https://github.com/Owoeye-Babatope?tab=repositories"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-xs font-semibold text-slate-300 hover:text-emerald-200"
+                >
+                  View related code on GitHub ↗
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: HR Data Exploratory Analysis (Power BI) -->
+            <article
+              class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
+            >
+              <div class="space-y-4">
+                <div class="relative overflow-hidden rounded-2xl border border-slate-800/80">
+                  <!-- Live Power BI embed -->
+                  <iframe
+                    title="HR DATA Exploratory Analysis"
+                    height="260"
+                    width="100%"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiNTFlMGQwZDQtMDM0NS00M2QzLTk2OWQtZmEyNTE5ODYwYzk2IiwidCI6IjY2MTE3MDdhLTQ3NzAtNGZjNC05YTYyLWYzMjNkNzA2MTEwOCJ9"
+                    frameborder="0"
+                    allowfullscreen="true"
+                  ></iframe>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-50">
+                    HR Data Exploratory Analysis (Power BI)
+                  </h3>
+                  <p class="mt-2 text-sm leading-relaxed text-slate-300">
+                    Developed an HR analytics dashboard in Power BI to explore workforce
+                    structure, diversity, and headcount trends by department, role, and
+                    demographic segments. The report helps HR and leadership monitor key
+                    metrics such as turnover, composition, and hiring patterns using
+                    interactive filters and visual storytelling. Related HR analytics work
+                    and supporting analysis are captured in my GitHub projects.
+                  </p>
+
+                  <dl
+                    class="mt-4 grid gap-3 text-xs text-slate-300 sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1.5fr)]"
+                  >
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                      <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                        Techniques
+                      </dt>
+                      <dd class="mt-1 text-xs font-medium">
+                        Exploratory analysis, HR KPIs, segmentation
+                      </dd>
+                    </div>
+                    <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                      <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                        Focus
+                      </dt>
+                      <dd class="mt-1 text-xs font-medium">
+                        Workforce analytics, people insights
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <ul class="mt-4 flex flex-wrap gap-2 text-[0.7rem] font-medium">
+                    <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                      Power BI
+                    </li>
+                    <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                      HR Analytics
+                    </li>
+                    <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                      Data Visualization
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+                <a
+                  href="https://github.com/Owoeye-Babatope?tab=repositories"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-xs font-semibold text-slate-300 hover:text-emerald-200"
+                >
+                  View related code on GitHub ↗
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 5: AIBL EDA (GitHub-based) -->
+            <article
+              class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
+            >
+              <!-- PROJECT IMAGE -->
+              <div class="relative mb-4 overflow-hidden rounded-2xl border border-slate-800/80">
+                <img
+                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80"
+                  alt="Jupyter notebook with exploratory charts and statistics"
+                  class="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20"></div>
+                <div class="pointer-events-none absolute bottom-3 left-3 text-xs font-medium text-emerald-200">
+                  AIBL Study · EDA
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-slate-50">
+                  AIBL EDA – Alzheimer’s Imaging, Biomarkers & Lifestyle Study
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-300">
+                  Performed an in-depth exploratory data analysis on the AIBL cohort,
+                  profiling demographics, cognitive scores, imaging-derived measures, and
+                  biomarkers. Used Python, pandas, and visualization libraries to uncover
+                  patterns linked to disease progression and risk factors. The full
+                  notebook, data-processing steps, and visualisations are available as a
+                  GitHub-based project.
+                </p>
+
+                <dl
+                  class="mt-4 grid gap-3 text-xs text-slate-300 sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1.5fr)]"
+                >
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Techniques
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Exploratory data analysis, cohort profiling, visualization
+                    </dd>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Focus
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Dementia research, AIBL dataset
+                    </dd>
+                  </div>
+                </dl>
+
+                <ul class="mt-4 flex flex-wrap gap-2 text-[0.7rem] font-medium">
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Python
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    pandas
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    EDA
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Medical Data
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+                <!-- TODO: replace with exact AIBL EDA repo URL -->
+                <a
+                  href="https://github.com/Owoeye-Babatope?tab=repositories"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 link-underline"
+                >
+                  View AIBL EDA project on GitHub ↗
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 6: SQL Project -->
+            <article
+              class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
+            >
+              <!-- PROJECT IMAGE -->
+              <div class="relative mb-4 overflow-hidden rounded-2xl border border-slate-800/80">
+                <img
+                  src="https://images.unsplash.com/photo-1517244881085-39a7f3a1d79e?auto=format&fit=crop&w=900&q=80"
+                  alt="SQL code on screen with database diagrams"
+                  class="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20"></div>
+                <div class="pointer-events-none absolute bottom-3 left-3 text-xs font-medium text-emerald-200">
+                  SQL · Relational Analytics
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-slate-50">
+                  Relational Data Analytics with SQL
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-300">
+                  End-to-end SQL project analysing sales and customer behaviour directly
+                  from a relational database. Wrote complex queries with joins, CTEs,
+                  window functions, and aggregations to answer questions around revenue,
+                  customer lifetime value, cohort performance, and retention. The full
+                  query library and documentation are maintained in a dedicated GitHub
+                  repository.
+                </p>
+
+                <dl
+                  class="mt-4 grid gap-3 text-xs text-slate-300 sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1.5fr)]"
+                >
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Techniques
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Joins, CTEs, window functions, aggregation
+                    </dd>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Focus
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Sales & customer analytics in SQL
+                    </dd>
+                  </div>
+                </dl>
+
+                <ul class="mt-4 flex flex-wrap gap-2 text-[0.7rem] font-medium">
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    SQL
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Data Modelling
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Query Optimisation
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+                <!-- TODO: replace with exact SQL repo URL -->
+                <a
+                  href="https://github.com/Owoeye-Babatope?tab=repositories"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 link-underline"
+                >
+                  View SQL project on GitHub ↗
                 </a>
               </div>
             </article>
@@ -634,7 +942,9 @@
                   </li>
                   <li class="rounded-full bg-slate-800/80 px-3 py-1">Jupyter Notebook</li>
                   <li class="rounded-full bg-slate-800/80 px-3 py-1">Git &amp; GitHub</li>
-                  <li class="rounded-full bg-slate-800/80 px-3 py-1">Automation &amp; AI Tools</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">
+                    Automation &amp; AI Tools
+                  </li>
                 </ul>
               </div>
             </div>
@@ -661,7 +971,6 @@
               </p>
 
               <div class="mt-6 flex flex-wrap items-center gap-4">
-                <!-- TODO: replace REPLACE_WITH_YOUR_EMAIL with your actual email -->
                 <a
                   href="mailto:owoeyebabatopeb@gmail.com"
                   class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/40 transition hover:bg-emerald-400"
@@ -727,10 +1036,6 @@
         if (!icon) return;
         if (isDark) {
           // Sun icon
-          icon.setAttribute(
-            "d",
-            ""
-          );
           icon.innerHTML =
             '<circle cx="12" cy="12" r="4"></circle>' +
             '<path d="M12 2v2"></path>' +
@@ -770,4 +1075,3 @@
     </script>
   </body>
 </html>
-
