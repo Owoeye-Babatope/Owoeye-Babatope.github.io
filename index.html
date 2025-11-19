@@ -1,296 +1,772 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babatope Owoeye - Data Analytics Portfolio</title>
-    <!-- Tailwind CSS CDN -->
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Babatope Owoeye | Data Analytics & Data Science Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Babatope Owoeye, Data Analyst & Data Scientist turning complex data into actionable insights."
+    />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+        <rect width='100' height='100' rx='20' fill='%230f172a'/>
+        <text x='50%' y='54%' text-anchor='middle' fill='white' font-size='52' font-family='system-ui, sans-serif'>B</text>
+      </svg>"
+    />
+
+    <!-- Google Fonts (optional, but nice) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter for a professional look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/favicon-16x16.png">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+
+      // Simple dark mode toggle with localStorage
+      (function () {
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0F172A; /* Darker background: slate-900 */
-            color: #E2E8F0; /* Light gray text for readability */
-        }
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #2D3748; /* Darker track */
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4A5568; /* Darker thumb */
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6B7280; /* Lighter thumb on hover */
-        }
+      /* Smooth underline hover effect */
+      .link-underline {
+        position: relative;
+      }
+      .link-underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.2rem;
+        width: 100%;
+        height: 2px;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 200ms ease-out;
+      }
+      .link-underline:hover::after {
+        transform: scaleX(1);
+      }
     </style>
-</head>
-<body class="antialiased">
-    <!-- Header/Hero Section -->
-    <header class="relative py-16 px-4 sm:px-6 lg:px-8 shadow-lg text-white overflow-hidden">
-        <!-- Background Image Overlay -->
-        <div class="absolute inset-0 bg-cover bg-center"
-             style="background-image: url('images/Header background.png'); background-color: rgba(0, 0, 0, 0.5);">
-             <!-- The rgba() color adds a dark overlay to make text more readable on top of the image -->
-        </div>
+  </head>
 
-        <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-            <div class="mb-8 md:mb-0">
-                <!-- Profile Image Placeholder -->
-                <img src="images/Profile Photo.jpeg" alt="Babatope Owoeye Profile Photo" class="w-36 h-36 rounded-full mx-auto md:mx-0 border-4 border-blue-300 shadow-md">
+  <body
+    class="bg-slate-950 text-slate-100 antialiased dark:bg-slate-950 dark:text-slate-100"
+  >
+    <!-- Page wrapper -->
+    <div class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+
+      <!-- Navigation -->
+      <header
+        class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/85 backdrop-blur"
+      >
+        <nav
+          class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+        >
+          <!-- Brand -->
+          <a href="#top" class="flex items-center gap-2">
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/90 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30"
+            >
+              BO
             </div>
+            <span class="text-sm font-medium tracking-tight text-slate-100">
+              Babatope Owoeye
+            </span>
+          </a>
 
+          <!-- Nav links -->
+          <div class="hidden items-center gap-8 text-sm font-medium text-slate-300 sm:flex">
+            <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
+            <a href="#projects" class="hover:text-emerald-400 transition-colors"
+              >Projects</a
+            >
+            <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
+            <a href="#contact" class="hover:text-emerald-400 transition-colors"
+              >Contact</a
+            >
+          </div>
 
-
-
-            
-            <div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-2">
-                    Hello, I'm <span class="text-blue-300">Babatope Owoeye</span>
-                </h1>
-                <p class="text-xl sm:text-2xl font-light">
-                    Data Analyst | Data Science | Turning Data into Actionable Insights
-                </p>
-                <!-- Social Links -->
-                <div class="mt-6 flex justify-center md:justify-start space-x-4">
-                    <a href="https://linkedin.com/in/owoeyebabatopeb" target="_blank" class="text-blue-200 hover:text-blue-400 transition duration-300 transform hover:scale-105">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                    <!-- GitHub Profile Link -->
-                    <a href="https://github.com/Owoeye-Babatope" target="_blank" class="text-blue-200 hover:text-blue-400 transition duration-300 transform hover:scale-105">
-                        <svg width="32" height="32" viewBox="0 0 1.28 1.28" xmlns="http://www.w3.org/2000/svg"><path d="M0.64 0.055c-0.331 0 -0.6 0.269 -0.6 0.6 0 0.263 0.17 0.487 0.406 0.568l0.004 0.001c0.03 0.006 0.041 -0.013 0.041 -0.029 0 -0.014 0 -0.052 -0.001 -0.102 -0.167 0.036 -0.202 -0.08 -0.202 -0.08a0.16 0.16 0 0 0 -0.066 -0.087l-0.001 0c-0.054 -0.037 0.004 -0.036 0.004 -0.036a0.126 0.126 0 0 1 0.092 0.061l0 0.001a0.128 0.128 0 0 0 0.175 0.05l-0.001 0a0.128 0.128 0 0 1 0.038 -0.08l0 0c-0.133 -0.015 -0.273 -0.067 -0.273 -0.296l0 -0.004c0 -0.061 0.023 -0.116 0.062 -0.158l0 0a0.208 0.208 0 0 1 -0.013 -0.073c0 -0.031 0.007 -0.061 0.019 -0.087l-0.001 0.001s0.05 -0.016 0.165 0.061c0.045 -0.013 0.097 -0.02 0.15 -0.02s0.105 0.007 0.154 0.021l-0.004 -0.001c0.114 -0.078 0.164 -0.061 0.164 -0.061 0.011 0.026 0.018 0.056 0.018 0.087 0 0.026 -0.004 0.05 -0.013 0.073l0 -0.002A0.232 0.232 0 0 1 1.021 0.62l0 0.004v0c0 0.23 -0.14 0.281 -0.274 0.296a0.143 0.143 0 0 1 0.04 0.111l0 0c0 0.08 -0.001 0.145 -0.001 0.164 0 0.016 0.01 0.034 0.041 0.028 0.241 -0.081 0.412 -0.305 0.412 -0.569 0 -0.331 -0.268 -0.599 -0.599 -0.599h-0.001z"/></svg>
-
-                    </a>
-                    <a href="https://www.credly.com/users/babatope-owoeye" target="_blank" class="text-blue-200 hover:text-blue-400 transition duration-300 transform hover:scale-105">
-                        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                          <path style="fill:#f36c21" d="M32 16a16 16 0 0 1-16 16A16 16 0 0 1 0 16a16 16 0 0 1 32 0"/>
-                          <path d="M20.975 11.612h.093a.44.44 0 0 1 .303.156c.107.131.135.307.144.472.025.503-.084 1.003-.228 1.484-.184.637-.444 1.251-.656 1.879a4 4 0 0 0-.103.335c-.047.188-.04.384-.047.579a2.7 2.7 0 0 0 .04.54.5.5 0 0 0 .135.269c.069.063.169.091.26.063a.8.8 0 0 0 .307-.221c.121-.135.237-.272.321-.431a2 2 0 0 0 .221-.688c.047-.363.084-.731.216-1.075.051-.131.112-.265.231-.347.16-.112.4-.065.521.084a.4.4 0 0 1 .075.263 1.3 1.3 0 0 1-.072.36 3.6 3.6 0 0 0-.207 1.284.6.6 0 0 0 .065.297c.044.075.119.135.207.135.1 0 .188-.06.251-.131q.144-.167.237-.365c.125-.265.184-.556.237-.844.044-.244.088-.488.156-.725a.8.8 0 0 1 .175-.337.32.32 0 0 1 .235-.091.33.33 0 0 1 .228.119c.081.091.097.216.088.331-.088.691-.184 1.381-.263 2.072q-.085.647-.144 1.293c-.003.047.053.075.084.044.225-.216.447-.44.616-.703.079-.119.135-.247.209-.365.031-.053.069-.107.128-.125a.28.28 0 0 1 .284.031.27.27 0 0 1 .1.188v.084c-.019.144-.103.265-.165.391a2.8 2.8 0 0 1-.707.903 2.3 2.3 0 0 1-.725.412c-.016.007-.04.009-.044.031a2.2 2.2 0 0 1-.603 1.047 2.5 2.5 0 0 1-1.179.64c-.24.053-.493.075-.737.031a1.3 1.3 0 0 1-.672-.344 1 1 0 0 1-.291-.609 1.07 1.07 0 0 1 .135-.607c.116-.209.291-.384.497-.507.197-.119.421-.175.644-.203q.381-.04.769-.007l.479.04c.088.007.184.037.269-.007.06-.028.079-.1.088-.16.037-.281.093-.565.06-.853-.007-.037-.016-.093-.063-.097-.056.025-.084.084-.116.135-.097.188-.279.331-.488.372s-.437-.065-.535-.253c-.047-.079-.069-.172-.137-.237-.047-.044-.116-.044-.172-.019-.1.044-.165.135-.247.203a1.28 1.28 0 0 1-.772.349.86.86 0 0 1-.825-.481c-.019-.044-.035-.107-.091-.112-.063-.009-.109.04-.144.084-.165.209-.321.435-.54.591a.8.8 0 0 1-.484.165.53.53 0 0 1-.456-.265c-.04-.072-.056-.163-.121-.219-.051-.044-.128-.037-.181-.003-.081.047-.128.131-.193.197a.88.88 0 0 1-.697.247.85.85 0 0 1-.697-.531c-.016-.04-.037-.088-.081-.1-.035-.012-.063.012-.084.035-.169.156-.337.316-.54.425a1.33 1.33 0 0 1-.669.175 1.2 1.2 0 0 1-.693-.212 1.07 1.07 0 0 1-.381-.469c-.021-.051-.051-.107-.107-.119-.051-.012-.093.025-.121.063a1.2 1.2 0 0 1-.316.3 1.2 1.2 0 0 1-.635.207.67.67 0 0 1-.475-.188.88.88 0 0 1-.235-.5c-.035-.24.016-.484.084-.712.044-.149.1-.293.135-.447a.36.36 0 0 0-.009-.235c-.028-.056-.088-.091-.144-.116-.063-.025-.128.009-.172.051s-.065.093-.091.147a4.13 4.13 0 0 1-1.459 1.813 2.7 2.7 0 0 1-1.2.497 2.3 2.3 0 0 1-.949-.072 1.7 1.7 0 0 1-.516-.237 2.1 2.1 0 0 1-.637-.735 3.3 3.3 0 0 1-.275-.703 5 5 0 0 1-.137-1.06v-.244c.007-.263.031-.525.084-.781a4.7 4.7 0 0 1 .491-1.328c.181-.325.397-.631.669-.884a2.3 2.3 0 0 1 1.053-.581 1.8 1.8 0 0 1 1.137.1c.107.047.2.116.312.149a.27.27 0 0 0 .235-.035c.1-.079.147-.203.231-.297a.43.43 0 0 1 .428-.119.42.42 0 0 1 .284.303.53.53 0 0 1-.019.281c-.044.128-.116.244-.184.36-.228.393-.4.819-.509 1.26-.035.135-.063.275-.116.403a.67.67 0 0 1-.24.312.4.4 0 0 1-.34.063.37.37 0 0 1-.231-.219.63.63 0 0 1-.051-.347c.031-.279.184-.531.191-.816a.52.52 0 0 0-.172-.428.83.83 0 0 0-.644-.16 1.33 1.33 0 0 0-.703.337 2.4 2.4 0 0 0-.491.691 4.27 4.27 0 0 0-.428 2.363c.031.263.093.525.219.763a1.3 1.3 0 0 0 .309.391 1.3 1.3 0 0 0 .579.272c.303.06.621.019.907-.091a2.5 2.5 0 0 0 .975-.719c.14-.16.263-.335.381-.512.119-.165.244-.34.291-.544a.9.9 0 0 0-.028-.403.67.67 0 0 1 .165-.5.53.53 0 0 1 .279-.172.4.4 0 0 1 .307.065.29.29 0 0 1 .112.316c-.021.075-.047.153-.025.231a.17.17 0 0 0 .153.109c.149.012.307-.016.451.035a.62.62 0 0 1 .387.751c-.065.231-.147.46-.191.697-.012.079-.025.16-.003.237.012.056.063.107.121.109.103.009.197-.047.269-.116.147-.147.244-.335.312-.528.084-.235.128-.481.191-.721.065-.247.165-.488.321-.691a1.23 1.23 0 0 1 .993-.493.83.83 0 0 1 .581.244.9.9 0 0 1 .225.491c.047.307-.009.628-.149.907a1.28 1.28 0 0 1-1.019.688c-.063.007-.135.003-.181.051-.04.04-.037.103-.031.156a.73.73 0 0 0 .16.403c.112.116.281.197.447.16a1.07 1.07 0 0 0 .488-.293 3 3 0 0 0 .344-.421c.144-.207.231-.444.319-.675.084-.228.163-.46.303-.66.112-.169.26-.316.435-.421a1.13 1.13 0 0 1 .656-.172c.072.003.153.007.212-.037.053-.04.072-.112.072-.179 0-.119.012-.235.021-.353.016-.184.031-.369.056-.551.053-.456.147-.907.269-1.347.063-.221.144-.447.284-.635a.7.7 0 0 1 .225-.216.4.4 0 0 1 .303-.021c.125.037.207.156.256.269.091.221.065.469.047.703-.025.369-.112.731-.188 1.093-.065.319-.119.64-.179.96l-.24 1.316c-.069.36-.147.725-.103 1.093.012.097.025.203.091.279a.18.18 0 0 0 .188.044c.084-.028.144-.103.188-.179.103-.175.193-.36.284-.544.131-.256.263-.521.307-.809.069-.437.116-.881.179-1.321q.079-.493.16-.981c.065-.409.14-.816.256-1.212a1.3 1.3 0 0 1 .263-.519.7.7 0 0 1 .416-.219m-6.043 3.629a.35.35 0 0 0-.153.119 1.3 1.3 0 0 0-.207.388 1.1 1.1 0 0 0-.079.463c.003.047.051.081.093.081.084.003.16-.044.225-.093a.93.93 0 0 0 .307-.425.8.8 0 0 0 .06-.328c-.007-.075-.044-.153-.109-.191a.16.16 0 0 0-.137-.012m2.679.349a.76.76 0 0 0-.444.272 1.3 1.3 0 0 0-.251.512 1.6 1.6 0 0 0 0 .812.47.47 0 0 0 .121.221c.04.04.097.063.153.065.147.021.284-.06.397-.144a.87.87 0 0 0 .288-.419c.035-.1.012-.207.003-.309a4.5 4.5 0 0 1-.003-.628c.003-.072.025-.14.025-.212 0-.056-.021-.119-.075-.149-.065-.04-.144-.035-.216-.021m4.179 3.737a1.3 1.3 0 0 0-.44.1.64.64 0 0 0-.349.328c-.044.093-.063.207-.016.3a.45.45 0 0 0 .231.212.8.8 0 0 0 .425.053 1.73 1.73 0 0 0 1.147-.625c.056-.069.1-.147.147-.221.012-.025.031-.065.003-.088-.035-.025-.079-.016-.116-.016-.16-.009-.319-.025-.479-.031-.184-.009-.369-.025-.553-.012" style="fill:#fff"/>
-                        </svg>
-                   </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-
-        <!-- About Me Section -->
-        <section id="about" class="mb-16 bg-gray-900 p-8 rounded-xl shadow-md transform hover:scale-[1.005] transition-transform duration-300">
-            <h2 class="text-3xl font-bold text-gray-100 mb-6 text-center">About Me</h2>
-            <div class="prose max-w-none text-gray-200 leading-relaxed text-lg">
-                <p>Dynamic, versatile, and proactive Data Analyst with a solid foundation in data science and engineering. Microsoft Power BI certified user in creating data visualisations and presentations, managing and efficiently querying databases (MySQL), automating data collection pipelines, and using AI tools to bring about efficient data-driven solutions.</p>
-                <p>I have a track record working with teams, contributing to project success, and collaborating effectively with cross-functional stakeholders to deliver actionable insights. Passionate about continuous improvement and applying new technologies to enhance information accessibility and support strategic decision-making.</p>
-            </div>
-        </section>
-        <hr class="my-12 border-gray-700">
-
-        <!-- Projects Section -->
-        <section id="projects" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-100 mb-10 text-center">My Projects</h2>
-
-            <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
-            <iframe title="HR DATA Exploratory Analysis"  height="373" width="100%" src="https://app.powerbi.com/view?r=eyJrIjoiNTFlMGQwZDQtMDM0NS00M2QzLTk2OWQtZmEyNTE5ODYwYzk2IiwidCI6IjY2MTE3MDdhLTQ3NzAtNGZjNC05YTYyLWYzMjNkNzA2MTEwOCJ9" frameborder="0" allowFullScreen="true"></iframe>
-            </div>
-            <div class="mb-16">
-                
-            </div>
-
-
-           
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project Card 1: Early Detection of Dementia -->
-                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
-                    <img src="images/Early Dementia Detection.png" alt="Early Detection of Dementia from Brain Imagery using Neural Networks" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Early Detection of Dementia from Brain Imagery</h3>
-                        <p class="text-gray-300 text-sm mb-4">Designed and executed robust data pipelines to analyze large, complex brain imagery datasets. Developed advanced neural network models for early detection, achieving a high AUC of 0.97. Collaborated effectively to deliver actionable insights.</p>
-                        <div class="flex flex-wrap gap-2 text-sm mb-4">
-                            <span class="bg-blue-800 text-blue-100 px-3 py-1 rounded-full font-medium">Machine Learning</span>
-                            <span class="bg-green-800 text-green-100 px-3 py-1 rounded-full font-medium">Deep Learning</span>
-                            <span class="bg-yellow-800 text-yellow-100 px-3 py-1 rounded-full font-medium">Python</span>
-                            <span class="bg-red-800 text-red-100 px-3 py-1 rounded-full font-medium">Data Pipelines</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <!-- IMPORTANT: Replace '#' with the actual GitHub repository URL for this project -->
-                            <a href="https://github.com/Owoeye-Babatope/Dementia-Classification/blob/5cb8ad02b269f7a1414a823d6ac3bbed79136a13/Classify%20MRI%20T2.pdf" target="_blank" class="text-blue-400 hover:text-blue-200 font-medium transition duration-300">
-                                View Code &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-  
-                <!-- Project Card 3: High-Impact Data-Driven Project -->
-                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
-                    <img src="images/Report.png" alt="High-Impact Data-Driven Project (Freelance)" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">High-Impact Data-Driven Project (Freelance)</h3>
-                        <p class="text-gray-300 text-sm mb-4">Delivered a high-impact data-driven project that demonstrated strong analytical and predictive modeling capabilities, achieving an AUC of 0.97. This project focused on [mention specific domain if known, e.g., consumer behavior, financial analysis].</p>
-                        <div class="flex flex-wrap gap-2 text-sm mb-4">
-                            <span class="bg-purple-800 text-purple-100 px-3 py-1 rounded-full font-medium">Predictive Modeling</span>
-                            <span class="bg-red-800 text-red-100 px-3 py-1 rounded-full font-medium">Data Analysis</span>
-                            <span class="bg-indigo-800 text-indigo-100 px-3 py-1 rounded-full font-medium">Analytical Tools</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <!-- IMPORTANT: Replace '#' with the actual GitHub repository URL for this project -->
-                            <a href="https://app.powerbi.com/links/q2WLVLIRED?ctid=6611707a-4770-4fc4-9a62-f323d7061108&pbi_source=linkShare&bookmarkGuid=cc8975ca-4119-4ddc-b73f-7479e3b282ce" target="_blank" class="text-blue-400 hover:text-blue-200 font-medium transition duration-300">
-                                View Code &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 4: Sales Performance Dashboard (repurposed for Power BI) -->
-                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
-                    <img src="images/Dashboard.png" alt="Sales Performance Dashboard with Power BI" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Interactive Sales Dashboard with Power BI</h3>
-                        <p class="text-gray-300 text-sm mb-4">Utilized Power BI to design and build an interactive sales performance dashboard. This project focused on visualizing key performance indicators (KPIs) and identifying trends to support strategic business decisions. (Inspired by Coursera PowerBI Specialization).</p>
-                        <div class="flex flex-wrap gap-2 text-sm mb-4">
-                            <span class="bg-teal-800 text-teal-100 px-3 py-1 rounded-full font-medium">Power BI</span>
-                            <span class="bg-orange-800 text-orange-100 px-3 py-1 rounded-full font-medium">Data Visualization</span>
-                            <span class="bg-fuchsia-800 text-fuchsia-100 px-3 py-1 rounded-full font-medium">KPI Analysis</span>
-                            <span class="bg-cyan-800 text-cyan-100 px-3 py-1 rounded-full font-medium">SQL</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <!-- IMPORTANT: Replace '#' with the actual GitHub repository URL for this project -->
-                            <a href="https://app.powerbi.com/links/q2WLVLIRED?ctid=6611707a-4770-4fc4-9a62-f323d7061108&pbi_source=linkShare&bookmarkGuid=cc8975ca-4119-4ddc-b73f-7479e3b282ce" target="_blank" class="text-blue-400 hover:text-blue-200 font-medium transition duration-300">
-                                View Code &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-                
-               
-            
-        </section>
-        <hr class="my-12 border-gray-700">
-
-        <!-- Skills Section -->
-        <section id="skills" class="mb-16 bg-gray-900 p-8 rounded-xl shadow-md transform hover:scale-[1.005] transition-transform duration-300">
-            <h2 class="text-3xl font-bold text-gray-100 mb-6 text-center">My Skills</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">Python</span>
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">R</span>
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">SQL</span>
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">Power BI</span>
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">Machine Learning</span>
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">Data Pipelines</span>
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">Data Cleaning</span>
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">Data Extraction</span>
-                <span class="bg-gray-800 text-blue-300 px-4 py-2 rounded-full text-lg font-medium shadow-sm hover:shadow-md transition-shadow duration-300">Data Analysis</span>
-            </div>
-        </section>
-        <hr class="my-12 border-gray-700">
-
-        <!-- Contact Section -->
-        <section id="contact" class="mb-16 bg-gradient-to-r from-blue-900 to-gray-950 text-white p-8 rounded-xl shadow-lg text-center transform hover:scale-[1.005] transition-transform duration-300">
-            <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
-            <p class="text-lg mb-8">
-                I'm always open to new opportunities and collaborations. Feel free to reach out!
-            </p>
-            <a href="mailto:owoeyebabatopeb@gmail.com" class="inline-block bg-blue-400 text-white font-semibold py-3 px-8 rounded-full text-lg shadow-md hover:bg-blue-300 hover:text-gray-900 transition duration-300 transform hover:scale-105">
-                Email Me
+          <!-- Right side: Social + Theme toggle -->
+          <div class="flex items-center gap-3">
+            <!-- GitHub -->
+            <a
+              href="https://github.com/Owoeye-Babatope"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-emerald-500 hover:text-emerald-400 transition-colors"
+              aria-label="GitHub profile"
+            >
+              <!-- GitHub icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="h-4 w-4"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 .5C5.648.5.5 5.648.5 12c0 5.088 3.292 9.397 7.868 10.919.575.108.785-.246.785-.55 0-.272-.01-1.163-.016-2.11-3.2.696-3.878-1.508-3.878-1.508-.523-1.329-1.278-1.683-1.278-1.683-1.044-.713.079-.699.079-.699 1.155.081 1.764 1.187 1.764 1.187 1.027 1.76 2.694 1.252 3.35.958.104-.744.402-1.252.73-1.54-2.554-.291-5.237-1.277-5.237-5.683 0-1.255.449-2.281 1.185-3.085-.119-.29-.513-1.461.112-3.046 0 0 .965-.309 3.164 1.178a10.93 10.93 0 0 1 2.88-.387c.976.004 1.96.132 2.88.387 2.197-1.487 3.161-1.178 3.161-1.178.627 1.585.233 2.756.115 3.046.737.804 1.183 1.83 1.183 3.085 0 4.419-2.688 5.388-5.253 5.674.414.355.782 1.053.782 2.124 0 1.533-.014 2.769-.014 3.146 0 .306.207.664.791.552C20.214 21.393 23.5 17.083 23.5 12 23.5 5.648 18.352.5 12 .5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
             </a>
-            <div class="mt-6 flex justify-center space-x-6">
-                <a href="https://linkedin.com/in/owoeyebabatopeb" target="_blank" class="text-blue-200 hover:text-blue-400 transition duration-300 transform hover:scale-105">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-                <!-- GitHub Profile Link -->
-                <a href="https://github.com/Owoeye-Babatope" target="_blank" class="text-blue-200 hover:text-blue-400 transition duration-300 transform hover:scale-105">
-                    <svg width="32" height="32" viewBox="0 0 1.28 1.28" xmlns="http://www.w3.org/2000/svg"><path d="M0.64 0.055c-0.331 0 -0.6 0.269 -0.6 0.6 0 0.263 0.17 0.487 0.406 0.568l0.004 0.001c0.03 0.006 0.041 -0.013 0.041 -0.029 0 -0.014 0 -0.052 -0.001 -0.102 -0.167 0.036 -0.202 -0.08 -0.202 -0.08a0.16 0.16 0 0 0 -0.066 -0.087l-0.001 0c-0.054 -0.037 0.004 -0.036 0.004 -0.036a0.126 0.126 0 0 1 0.092 0.061l0 0.001a0.128 0.128 0 0 0 0.175 0.05l-0.001 0a0.128 0.128 0 0 1 0.038 -0.08l0 0c-0.133 -0.015 -0.273 -0.067 -0.273 -0.296l0 -0.004c0 -0.061 0.023 -0.116 0.062 -0.158l0 0a0.208 0.208 0 0 1 -0.013 -0.073c0 -0.031 0.007 -0.061 0.019 -0.087l-0.001 0.001s0.05 -0.016 0.165 0.061c0.045 -0.013 0.097 -0.02 0.15 -0.02s0.105 0.007 0.154 0.021l-0.004 -0.001c0.114 -0.078 0.164 -0.061 0.164 -0.061 0.011 0.026 0.018 0.056 0.018 0.087 0 0.026 -0.004 0.05 -0.013 0.073l0 -0.002A0.232 0.232 0 0 1 1.021 0.62l0 0.004v0c0 0.23 -0.14 0.281 -0.274 0.296a0.143 0.143 0 0 1 0.04 0.111l0 0c0 0.08 -0.001 0.145 -0.001 0.164 0 0.016 0.01 0.034 0.041 0.028 0.241 -0.081 0.412 -0.305 0.412 -0.569 0 -0.331 -0.268 -0.599 -0.599 -0.599h-0.001z"/></svg>
-                    </a>
-                    <a href="https://www.credly.com/users/babatope-owoeye" target="_blank" class="text-blue-200 hover:text-blue-400 transition duration-300 transform hover:scale-105">
-                         <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                          <path style="fill:#f36c21" d="M32 16a16 16 0 0 1-16 16A16 16 0 0 1 0 16a16 16 0 0 1 32 0"/>
-                          <path d="M20.975 11.612h.093a.44.44 0 0 1 .303.156c.107.131.135.307.144.472.025.503-.084 1.003-.228 1.484-.184.637-.444 1.251-.656 1.879a4 4 0 0 0-.103.335c-.047.188-.04.384-.047.579a2.7 2.7 0 0 0 .04.54.5.5 0 0 0 .135.269c.069.063.169.091.26.063a.8.8 0 0 0 .307-.221c.121-.135.237-.272.321-.431a2 2 0 0 0 .221-.688c.047-.363.084-.731.216-1.075.051-.131.112-.265.231-.347.16-.112.4-.065.521.084a.4.4 0 0 1 .075.263 1.3 1.3 0 0 1-.072.36 3.6 3.6 0 0 0-.207 1.284.6.6 0 0 0 .065.297c.044.075.119.135.207.135.1 0 .188-.06.251-.131q.144-.167.237-.365c.125-.265.184-.556.237-.844.044-.244.088-.488.156-.725a.8.8 0 0 1 .175-.337.32.32 0 0 1 .235-.091.33.33 0 0 1 .228.119c.081.091.097.216.088.331-.088.691-.184 1.381-.263 2.072q-.085.647-.144 1.293c-.003.047.053.075.084.044.225-.216.447-.44.616-.703.079-.119.135-.247.209-.365.031-.053.069-.107.128-.125a.28.28 0 0 1 .284.031.27.27 0 0 1 .1.188v.084c-.019.144-.103.265-.165.391a2.8 2.8 0 0 1-.707.903 2.3 2.3 0 0 1-.725.412c-.016.007-.04.009-.044.031a2.2 2.2 0 0 1-.603 1.047 2.5 2.5 0 0 1-1.179.64c-.24.053-.493.075-.737.031a1.3 1.3 0 0 1-.672-.344 1 1 0 0 1-.291-.609 1.07 1.07 0 0 1 .135-.607c.116-.209.291-.384.497-.507.197-.119.421-.175.644-.203q.381-.04.769-.007l.479.04c.088.007.184.037.269-.007.06-.028.079-.1.088-.16.037-.281.093-.565.06-.853-.007-.037-.016-.093-.063-.097-.056.025-.084.084-.116.135-.097.188-.279.331-.488.372s-.437-.065-.535-.253c-.047-.079-.069-.172-.137-.237-.047-.044-.116-.044-.172-.019-.1.044-.165.135-.247.203a1.28 1.28 0 0 1-.772.349.86.86 0 0 1-.825-.481c-.019-.044-.035-.107-.091-.112-.063-.009-.109.04-.144.084-.165.209-.321.435-.54.591a.8.8 0 0 1-.484.165.53.53 0 0 1-.456-.265c-.04-.072-.056-.163-.121-.219-.051-.044-.128-.037-.181-.003-.081.047-.128.131-.193.197a.88.88 0 0 1-.697.247.85.85 0 0 1-.697-.531c-.016-.04-.037-.088-.081-.1-.035-.012-.063.012-.084.035-.169.156-.337.316-.54.425a1.33 1.33 0 0 1-.669.175 1.2 1.2 0 0 1-.693-.212 1.07 1.07 0 0 1-.381-.469c-.021-.051-.051-.107-.107-.119-.051-.012-.093.025-.121.063a1.2 1.2 0 0 1-.316.3 1.2 1.2 0 0 1-.635.207.67.67 0 0 1-.475-.188.88.88 0 0 1-.235-.5c-.035-.24.016-.484.084-.712.044-.149.1-.293.135-.447a.36.36 0 0 0-.009-.235c-.028-.056-.088-.091-.144-.116-.063-.025-.128.009-.172.051s-.065.093-.091.147a4.13 4.13 0 0 1-1.459 1.813 2.7 2.7 0 0 1-1.2.497 2.3 2.3 0 0 1-.949-.072 1.7 1.7 0 0 1-.516-.237 2.1 2.1 0 0 1-.637-.735 3.3 3.3 0 0 1-.275-.703 5 5 0 0 1-.137-1.06v-.244c.007-.263.031-.525.084-.781a4.7 4.7 0 0 1 .491-1.328c.181-.325.397-.631.669-.884a2.3 2.3 0 0 1 1.053-.581 1.8 1.8 0 0 1 1.137.1c.107.047.2.116.312.149a.27.27 0 0 0 .235-.035c.1-.079.147-.203.231-.297a.43.43 0 0 1 .428-.119.42.42 0 0 1 .284.303.53.53 0 0 1-.019.281c-.044.128-.116.244-.184.36-.228.393-.4.819-.509 1.26-.035.135-.063.275-.116.403a.67.67 0 0 1-.24.312.4.4 0 0 1-.34.063.37.37 0 0 1-.231-.219.63.63 0 0 1-.051-.347c.031-.279.184-.531.191-.816a.52.52 0 0 0-.172-.428.83.83 0 0 0-.644-.16 1.33 1.33 0 0 0-.703.337 2.4 2.4 0 0 0-.491.691 4.27 4.27 0 0 0-.428 2.363c.031.263.093.525.219.763a1.3 1.3 0 0 0 .309.391 1.3 1.3 0 0 0 .579.272c.303.06.621.019.907-.091a2.5 2.5 0 0 0 .975-.719c.14-.16.263-.335.381-.512.119-.165.244-.34.291-.544a.9.9 0 0 0-.028-.403.67.67 0 0 1 .165-.5.53.53 0 0 1 .279-.172.4.4 0 0 1 .307.065.29.29 0 0 1 .112.316c-.021.075-.047.153-.025.231a.17.17 0 0 0 .153.109c.149.012.307-.016.451.035a.62.62 0 0 1 .387.751c-.065.231-.147.46-.191.697-.012.079-.025.16-.003.237.012.056.063.107.121.109.103.009.197-.047.269-.116.147-.147.244-.335.312-.528.084-.235.128-.481.191-.721.065-.247.165-.488.321-.691a1.23 1.23 0 0 1 .993-.493.83.83 0 0 1 .581.244.9.9 0 0 1 .225.491c.047.307-.009.628-.149.907a1.28 1.28 0 0 1-1.019.688c-.063.007-.135.003-.181.051-.04.04-.037.103-.031.156a.73.73 0 0 0 .16.403c.112.116.281.197.447.16a1.07 1.07 0 0 0 .488-.293 3 3 0 0 0 .344-.421c.144-.207.231-.444.319-.675.084-.228.163-.46.303-.66.112-.169.26-.316.435-.421a1.13 1.13 0 0 1 .656-.172c.072.003.153.007.212-.037.053-.04.072-.112.072-.179 0-.119.012-.235.021-.353.016-.184.031-.369.056-.551.053-.456.147-.907.269-1.347.063-.221.144-.447.284-.635a.7.7 0 0 1 .225-.216.4.4 0 0 1 .303-.021c.125.037.207.156.256.269.091.221.065.469.047.703-.025.369-.112.731-.188 1.093-.065.319-.119.64-.179.96l-.24 1.316c-.069.36-.147.725-.103 1.093.012.097.025.203.091.279a.18.18 0 0 0 .188.044c.084-.028.144-.103.188-.179.103-.175.193-.36.284-.544.131-.256.263-.521.307-.809.069-.437.116-.881.179-1.321q.079-.493.16-.981c.065-.409.14-.816.256-1.212a1.3 1.3 0 0 1 .263-.519.7.7 0 0 1 .416-.219m-6.043 3.629a.35.35 0 0 0-.153.119 1.3 1.3 0 0 0-.207.388 1.1 1.1 0 0 0-.079.463c.003.047.051.081.093.081.084.003.16-.044.225-.093a.93.93 0 0 0 .307-.425.8.8 0 0 0 .06-.328c-.007-.075-.044-.153-.109-.191a.16.16 0 0 0-.137-.012m2.679.349a.76.76 0 0 0-.444.272 1.3 1.3 0 0 0-.251.512 1.6 1.6 0 0 0 0 .812.47.47 0 0 0 .121.221c.04.04.097.063.153.065.147.021.284-.06.397-.144a.87.87 0 0 0 .288-.419c.035-.1.012-.207.003-.309a4.5 4.5 0 0 1-.003-.628c.003-.072.025-.14.025-.212 0-.056-.021-.119-.075-.149-.065-.04-.144-.035-.216-.021m4.179 3.737a1.3 1.3 0 0 0-.44.1.64.64 0 0 0-.349.328c-.044.093-.063.207-.016.3a.45.45 0 0 0 .231.212.8.8 0 0 0 .425.053 1.73 1.73 0 0 0 1.147-.625c.056-.069.1-.147.147-.221.012-.025.031-.065.003-.088-.035-.025-.079-.016-.116-.016-.16-.009-.319-.025-.479-.031-.184-.009-.369-.025-.553-.012" style="fill:#fff"/>
-                        </svg>
-                    </a>
-                </div>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/owoeyebabatopeb/"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-emerald-500 hover:text-emerald-400 transition-colors"
+              aria-label="LinkedIn profile"
+            >
+              <!-- LinkedIn icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.21 8.25h4.58V23H.21zM8.75 8.25h4.39v2.01h.06c.61-1.16 2.1-2.39 4.32-2.39 4.62 0 5.47 3.04 5.47 6.99V23h-4.58v-7.09c0-1.69-.03-3.86-2.35-3.86-2.35 0-2.71 1.83-2.71 3.73V23H8.75z"
+                />
+              </svg>
+            </a>
+
+            <!-- Theme toggle -->
+            <button
+              type="button"
+              id="theme-toggle"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-emerald-500 hover:text-emerald-400 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              <!-- Sun/Moon will be toggled via JS -->
+              <svg
+                id="theme-toggle-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <!-- Default moon -->
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main content -->
+      <main id="top" class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pt-16">
+        <!-- Hero -->
+        <section
+          aria-labelledby="hero-title"
+          class="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-center"
+        >
+          <div class="space-y-7">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+              Data Analytics · Data Science · AI
+            </p>
+
+            <div class="space-y-4">
+              <h1
+                id="hero-title"
+                class="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl"
+              >
+                Hello, I'm <span class="text-emerald-400">Babatope Owoeye</span>.
+              </h1>
+              <p class="text-lg text-slate-300 sm:text-xl">
+                Data Analyst &amp; Data Scientist with a focus on
+                <span class="font-semibold text-emerald-300">
+                  transforming complex data into actionable insights
+                </span>
+                that drive smarter decisions.
+              </p>
+            </div>
+
+            <p class="max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+              Dynamic, versatile, and proactive, with a strong foundation in data science
+              and engineering. I build robust data pipelines, design intuitive Power BI
+              dashboards, and develop machine learning models that deliver real impact —
+              from early detection of dementia to high-impact business analytics.
+            </p>
+
+            <!-- CTA buttons -->
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href="#projects"
+                class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/40 transition hover:bg-emerald-400"
+              >
+                View featured projects
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-emerald-400 hover:text-emerald-300"
+              >
+                Get in touch
+              </a>
+            </div>
+
+            <!-- Quick stats -->
+            <dl
+              class="grid gap-4 text-xs text-slate-300 sm:grid-cols-3 sm:text-sm md:max-w-xl"
+            >
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 px-4 py-3">
+                <dt class="text-slate-400">Core expertise</dt>
+                <dd class="mt-1 font-medium text-slate-100">
+                  Python, SQL, Power BI, ML
+                </dd>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 px-4 py-3">
+                <dt class="text-slate-400">Model performance</dt>
+                <dd class="mt-1 font-medium text-slate-100">
+                  Dementia AUC<span class="mx-1 text-slate-500">·</span>0.97
+                </dd>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 px-4 py-3">
+                <dt class="text-slate-400">Collaboration</dt>
+                <dd class="mt-1 font-medium text-slate-100">
+                  Cross-functional &amp; client-facing projects
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Right-side panel / “card” -->
+          <aside
+            class="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.9)]"
+          >
+            <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+              What I do
+            </h2>
+            <ul class="mt-4 space-y-4 text-sm text-slate-200">
+              <li class="flex gap-3">
+                <span class="mt-0.5 text-emerald-400">●</span>
+                <p>
+                  <span class="font-semibold text-slate-50">Data Analysis &amp; BI:</span>
+                  translate raw data into dashboards and reports that business and
+                  technical stakeholders can act on.
+                </p>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-0.5 text-emerald-400">●</span>
+                <p>
+                  <span class="font-semibold text-slate-50">Machine Learning:</span>
+                  build and evaluate models for prediction and classification, with a
+                  focus on explainability and real-world performance.
+                </p>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-0.5 text-emerald-400">●</span>
+                <p>
+                  <span class="font-semibold text-slate-50">Data Engineering Basics:</span>
+                  design efficient data pipelines for collection, cleaning, and
+                  transformation using Python, SQL, and automation tools.
+                </p>
+              </li>
+            </ul>
+
+            <div class="mt-6 flex items-center justify-between border-t border-slate-800 pt-4">
+              <div>
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">
+                  Based in
+                </p>
+                <p class="mt-1 text-sm font-medium text-slate-100">Belfast, UK</p>
+              </div>
+              <a
+                href="https://www.credly.com/users/babatope-owoeye"
+                target="_blank"
+                rel="noreferrer"
+                class="text-xs font-medium text-emerald-300 hover:text-emerald-200 link-underline"
+                style="--tw-shadow-color: rgba(52, 211, 153, 0.5)"
+              >
+                View certifications ↗
+              </a>
+            </div>
+          </aside>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-950 text-gray-400 py-8 px-4 sm:px-6 lg:px-8 text-center text-sm">
-        <p>&copy; 2025 Babatope Owoeye. All rights reserved.</p>
-        <p class="mt-2">Built with <span class="text-blue-500">&hearts;</span> and Tailwind CSS.</p>
-    </footer>
+        <!-- About -->
+        <section id="about" class="mt-16 border-t border-slate-800 pt-12">
+          <div class="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+            <div>
+              <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                About me
+              </h2>
+              <p class="mt-3 text-xl font-semibold tracking-tight text-slate-50">
+                A data professional focused on clarity, impact, and collaboration.
+              </p>
+            </div>
 
-</body>
+            <div class="space-y-4 text-sm leading-relaxed text-slate-300 sm:text-base">
+              <p>
+                I’m a Microsoft Power BI–certified Data Analyst with hands-on experience
+                turning complex, messy datasets into clear narratives. I’m comfortable
+                across the data lifecycle — from ingestion and cleaning through modeling,
+                visualization, and storytelling for stakeholders.
+              </p>
+              <p>
+                I’ve worked in collaborative environments, partnering with engineers,
+                analysts, and business teams to deliver solutions that are trusted and
+                actionable. I’m passionate about continuous improvement and using modern
+                tooling — from cloud platforms to AI — to make data more accessible and
+                decisions more evidence-based.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="mt-16 border-t border-slate-800 pt-12">
+          <div class="flex items-end justify-between gap-4">
+            <div>
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400"
+              >
+                Featured projects
+              </h2>
+              <p class="mt-3 text-xl font-semibold tracking-tight text-slate-50">
+                Selected work across healthcare AI and business analytics.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+            <!-- Project 1 -->
+            <article
+              class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
+            >
+              <div>
+                <h3 class="text-lg font-semibold text-slate-50">
+                  Early Detection of Dementia from Brain Imagery
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-300">
+                  Designed and executed robust data pipelines to analyze large, complex
+                  brain imagery datasets. Developed advanced neural network models for
+                  early detection, achieving an AUC of
+                  <span class="font-semibold text-emerald-300">0.97</span>, and
+                  collaborated with stakeholders to translate findings into meaningful
+                  clinical insights.
+                </p>
+
+                <dl
+                  class="mt-4 grid gap-3 text-xs text-slate-300 sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1.5fr)]"
+                >
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Techniques
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Deep learning, classification, model evaluation (AUC)
+                    </dd>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Focus
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Healthcare analytics, early disease detection
+                    </dd>
+                  </div>
+                </dl>
+
+                <ul class="mt-4 flex flex-wrap gap-2 text-[0.7rem] font-medium">
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Python
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Deep Learning
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Data Pipelines
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-5 flex items-center justify-between gap-3">
+                <a
+                  href="https://github.com/Owoeye-Babatope/Dementia-Classification"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 link-underline"
+                >
+                  View project on GitHub ↗
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article
+              class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
+            >
+              <div>
+                <h3 class="text-lg font-semibold text-slate-50">
+                  High-Impact Data-Driven Project (Freelance)
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-300">
+                  Delivered a high-impact freelance analytics engagement that showcased
+                  strong end-to-end skills in data preparation, feature engineering, and
+                  predictive modeling. Achieved an AUC of
+                  <span class="font-semibold text-emerald-300">0.97</span>, and presented
+                  insights in a way that aligned technical performance with business
+                  outcomes.
+                </p>
+
+                <dl
+                  class="mt-4 grid gap-3 text-xs text-slate-300 sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1.5fr)]"
+                >
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Techniques
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Predictive modeling, data sampling, model tuning
+                    </dd>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Focus
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Client-facing analytics, actionable recommendations
+                    </dd>
+                  </div>
+                </dl>
+
+                <ul class="mt-4 flex flex-wrap gap-2 text-[0.7rem] font-medium">
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Predictive Modeling
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Data Analysis
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Stakeholder Reporting
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-5 flex items-center justify-between gap-3">
+                <a
+                  href="https://app.powerbi.com/links/q2WLVLIRED?bookmarkGuid=cc8975ca-4119-4ddc-b73f-7479e3b282ce&ctid=6611707a-4770-4fc4-9a62-f323d7061108&pbi_source=linkShare"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 link-underline"
+                >
+                  Explore live report ↗
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article
+              class="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 transition hover:-translate-y-1 hover:border-emerald-500/70 hover:shadow-[0_18px_60px_rgba(16,185,129,0.25)]"
+            >
+              <div>
+                <h3 class="text-lg font-semibold text-slate-50">
+                  Interactive Sales Dashboard with Power BI
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-300">
+                  Built an interactive Power BI dashboard to analyze sales performance,
+                  surfacing key KPIs, trends, and segmentation views. Inspired by the
+                  Coursera Power BI Specialization, this project demonstrates best
+                  practices in data modeling, DAX measures, and dashboard design for
+                  business stakeholders.
+                </p>
+
+                <dl
+                  class="mt-4 grid gap-3 text-xs text-slate-300 sm:grid-cols-[minmax(0,1.5fr)_minmax(0,1.5fr)]"
+                >
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Techniques
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">Power BI, DAX, KPI design</dd>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <dt class="text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
+                      Focus
+                    </dt>
+                    <dd class="mt-1 text-xs font-medium">
+                      Sales analytics, stakeholder-friendly visuals
+                    </dd>
+                  </div>
+                </dl>
+
+                <ul class="mt-4 flex flex-wrap gap-2 text-[0.7rem] font-medium">
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Power BI
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    Data Visualization
+                  </li>
+                  <li class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">
+                    KPI Analysis
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-5 flex items-center justify-between gap-3">
+                <a
+                  href="https://app.powerbi.com/links/q2WLVLIRED?bookmarkGuid=cc8975ca-4119-4ddc-b73f-7479e3b282ce&ctid=6611707a-4770-4fc4-9a62-f323d7061108&pbi_source=linkShare"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 link-underline"
+                >
+                  View dashboard ↗
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="mt-16 border-t border-slate-800 pt-12">
+          <div class="grid gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,2.3fr)]">
+            <div>
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400"
+              >
+                Skills &amp; tools
+              </h2>
+              <p class="mt-3 text-xl font-semibold tracking-tight text-slate-50">
+                A stack built for practical, end-to-end data work.
+              </p>
+              <p class="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">
+                From exploratory analysis to production-ready dashboards and models, I
+                combine analytical rigor with clear communication so that insights don’t
+                get stuck in notebooks — they make it into decisions.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <!-- Languages -->
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Languages
+                </h3>
+                <ul class="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-100">
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">Python</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">R</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">SQL</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">DAX</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">HTML</li>
+                </ul>
+              </div>
+
+              <!-- Analytics & ML -->
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Analytics &amp; ML
+                </h3>
+                <ul class="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-100">
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">
+                    Exploratory Data Analysis
+                  </li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">
+                    Machine Learning
+                  </li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">
+                    Classification &amp; Regression
+                  </li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">
+                    Model Evaluation (AUC, etc.)
+                  </li>
+                </ul>
+              </div>
+
+              <!-- BI & Visualisation -->
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Business Intelligence
+                </h3>
+                <ul class="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-100">
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">Power BI</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">
+                    Dashboard Design
+                  </li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">KPI Definition</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">
+                    Storytelling with Data
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Data Engineering & Workflow -->
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Data Workflow &amp; Tools
+                </h3>
+                <ul class="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-100">
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">Data Cleaning</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">
+                    Data Extraction &amp; Pipelines
+                  </li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">Jupyter Notebook</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">Git &amp; GitHub</li>
+                  <li class="rounded-full bg-slate-800/80 px-3 py-1">Automation &amp; AI Tools</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="mt-16 border-t border-slate-800 pt-12">
+          <div
+            class="grid gap-10 lg:grid-cols-[minmax(0,2.2fr)_minmax(0,2fr)] lg:items-center"
+          >
+            <div>
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400"
+              >
+                Get in touch
+              </h2>
+              <p class="mt-3 text-xl font-semibold tracking-tight text-slate-50">
+                Open to opportunities, collaborations, and interesting data problems.
+              </p>
+              <p class="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">
+                Whether you’re looking for support on a specific project, exploring
+                analytics roles, or just want to discuss ideas, I’d be happy to connect.
+              </p>
+
+              <div class="mt-6 flex flex-wrap items-center gap-4">
+                <!-- TODO: replace REPLACE_WITH_YOUR_EMAIL with your actual email -->
+                <a
+                  href="mailto:REPLACE_WITH_YOUR_EMAIL"
+                  class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/40 transition hover:bg-emerald-400"
+                >
+                  Email me
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/owoeyebabatopeb/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-emerald-400 hover:text-emerald-300"
+                >
+                  Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+
+            <!-- Simple “contact summary” card -->
+            <aside
+              class="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 text-sm text-slate-300"
+            >
+              <p class="font-medium text-slate-100">
+                When you reach out, it’s helpful to include:
+              </p>
+              <ul class="mt-3 space-y-2 list-disc list-inside">
+                <li>Your context (company, project, or idea).</li>
+                <li>The data challenge you’re facing or role you’re hiring for.</li>
+                <li>Timelines and how I can best support you.</li>
+              </ul>
+              <p class="mt-4 text-xs text-slate-400">
+                I aim to respond thoughtfully and provide clear next steps, whether
+                that’s a quick look at your data, a deeper discussion, or a follow-up
+                call.
+              </p>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-slate-800/80 bg-slate-950/95">
+        <div
+          class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"
+        >
+          <p>© <span id="year"></span> Babatope Owoeye. All rights reserved.</p>
+          <p class="text-[0.7rem] text-slate-500">
+            Built with ♥, Tailwind CSS, and a focus on clear, impactful data storytelling.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Dynamic year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Theme toggle behavior
+      const toggleButton = document.getElementById("theme-toggle");
+      const icon = document.getElementById("theme-toggle-icon");
+
+      function setIcon(isDark) {
+        if (!icon) return;
+        if (isDark) {
+          // Sun icon
+          icon.setAttribute(
+            "d",
+            ""
+          );
+          icon.innerHTML =
+            '<circle cx="12" cy="12" r="4"></circle>' +
+            '<path d="M12 2v2"></path>' +
+            '<path d="M12 20v2"></path>' +
+            '<path d="m4.93 4.93 1.41 1.41"></path>' +
+            '<path d="m17.66 17.66 1.41 1.41"></path>' +
+            '<path d="M2 12h2"></path>' +
+            '<path d="M20 12h2"></path>' +
+            '<path d="m6.34 17.66-1.41 1.41"></path>' +
+            '<path d="m19.07 4.93-1.41 1.41"></path>';
+        } else {
+          // Moon icon
+          icon.innerHTML =
+            '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+        }
+      }
+
+      function isDark() {
+        return document.documentElement.classList.contains("dark");
+      }
+
+      setIcon(isDark());
+
+      if (toggleButton) {
+        toggleButton.addEventListener("click", () => {
+          const currentlyDark = isDark();
+          if (currentlyDark) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+          }
+          setIcon(!currentlyDark);
+        });
+      }
+    </script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
